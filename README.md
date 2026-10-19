@@ -114,7 +114,7 @@ The native client lives in `android/` and is built with the SDK tools directly:
 
 ```powershell
 cd android
-.\build.ps1 -Clean
+powershell -ExecutionPolicy Bypass -File .\build.ps1 -Clean
 ```
 
 The default server URL in the repository is the placeholder `https://pasta.example.com`. To prefill your own URL without committing it:
