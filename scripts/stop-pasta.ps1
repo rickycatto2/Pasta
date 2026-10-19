@@ -5,7 +5,15 @@ $ErrorActionPreference = 'SilentlyContinue'
 $root = Split-Path -Parent $PSScriptRoot
 $tunnelConfig = Join-Path $root 'cloudflared.yml'
 
-$listener = Get-NetTCPConnection -LocalPort 4317 -State Listen
+$port = 4317
+$envFile = Join-Path $root 'pasta.env'
+if (Test-Path $envFile) {
+    foreach ($line in Get-Content $envFile) {
+        if ($line -match '^\s*PASTA_PORT\s*=\s*(\d+)\s*$') { $port = [int]$Matches[1]; break }
+    }
+}
+
+$listener = Get-NetTCPConnection -LocalPort $port -State Listen
 if ($listener) {
     foreach ($processId in ($listener | Select-Object -ExpandProperty OwningProcess -Unique)) {
         Stop-Process -Id $processId -Force

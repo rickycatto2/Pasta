@@ -5,6 +5,14 @@ $root = Split-Path -Parent $PSScriptRoot
 $logs = Join-Path $root 'logs'
 New-Item -ItemType Directory -Force $logs | Out-Null
 
+$port = 4317
+$envFile = Join-Path $root 'pasta.env'
+if (Test-Path $envFile) {
+    foreach ($line in Get-Content $envFile) {
+        if ($line -match '^\s*PASTA_PORT\s*=\s*(\d+)\s*$') { $port = [int]$Matches[1]; break }
+    }
+}
+
 $node = 'C:\Program Files\nodejs\node.exe'
 if (-not (Test-Path $node)) {
     $command = Get-Command node -ErrorAction SilentlyContinue
@@ -19,7 +27,7 @@ if (-not (Test-Path $cloudflared)) {
 
 function Test-Pasta {
     try {
-        $response = Invoke-WebRequest -UseBasicParsing -Uri 'http://127.0.0.1:4317/api/health' -TimeoutSec 2
+        $response = Invoke-WebRequest -UseBasicParsing -Uri "http://127.0.0.1:$port/api/health" -TimeoutSec 2
         return $response.StatusCode -eq 200
     } catch {
         return $false
@@ -59,6 +67,6 @@ if (-not $tunnel) {
     $startedTunnel = $true
 }
 
-$message = "$(Get-Date -Format s) start-pasta serverStarted=$startedServer healthy=$(Test-Pasta) tunnelStarted=$startedTunnel"
+$message = "$(Get-Date -Format s) start-pasta port=$port serverStarted=$startedServer healthy=$(Test-Pasta) tunnelStarted=$startedTunnel"
 Add-Content -Path (Join-Path $logs 'startup.log') -Value $message
 Write-Host $message
