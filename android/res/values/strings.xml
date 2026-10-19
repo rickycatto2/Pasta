@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pasta</string>
+    <string name="login_kicker">PRIVATE CLIPBOARD</string>
+    <string name="login_title">Open your clipboard.</string>
+    <string name="login_subtitle">Text and images, waiting on every screen. Unlock with the passphrase you set for Pasta.</string>
+    <string name="server_label">Server</string>
+    <string name="passphrase_label">Passphrase</string>
+    <string name="unlock">Unlock clipboard</string>
+    <string name="unlocking">Unlocking…</string>
+    <string name="login_footer">Private to you · served over a Cloudflare tunnel</string>
+    <string name="composer_hint">Paste a link, a code, a thought…</string>
+    <string name="send">Paste it</string>
+    <string name="add_image">Add image</string>
+    <string name="from_clipboard">Clipboard</string>
+    <string name="recent_pastes">Recent pastes</string>
+    <string name="empty_title">A blank page, for now</string>
+    <string name="empty_copy">Paste text above, add an image, or share something from another app. It will meet you here.</string>
+    <string name="share_target_hint">Send to Pasta</string>
+    <string name="settings">Settings</string>
+    <string name="refresh">Refresh</string>
+    <string name="sign_out">Sign out</string>
+    <string name="close">Close</string>
+    <string name="delete">Delete</string>
+    <string name="keep">Keep it</string>
+    <string name="copy">Copy</string>
+    <string name="copied">Copied</string>
+    <string name="copy_image">Copy image</string>
+    <string name="save">Save</string>
+    <string name="saved">Saved to Pictures/Pasta</string>
+    <string name="pin">Pin</string>
+    <string name="unpin">Unpin</string>
+    <string name="show_more">Show more</string>
+    <string name="show_less">Show less</string>
+    <string name="delete_title">Delete this paste?</string>
+    <string name="delete_copy">It will be removed from every device. There is no undo.</string>
+    <string name="session_expired">Session expired. Unlock again.</string>
+    <string name="network_error">Cannot reach Pasta. Check your connection and try again.</string>
+    <string name="copied_text">Text copied to this device.</string>
+    <string name="copied_image">Image copied to this device.</string>
+    <string name="image_ready">Image pasted. It is on every device.</string>
+    <string name="text_ready">Text pasted. It is on every device.</string>
+    <string name="empty_clipboard">Your clipboard is empty.</string>
+    <string name="clipboard_loaded">Clipboard loaded. Tap Paste it.</string>
+    <string name="settings_title">Pasta</string>
+</resources>

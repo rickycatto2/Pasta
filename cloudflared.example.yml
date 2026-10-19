@@ -1,0 +1,10 @@
+﻿# Copy to cloudflared.yml (ignored by git) after creating your own tunnel.
+# cloudflared tunnel create pasta prints the tunnel UUID and credentials path.
+tunnel: YOUR_TUNNEL_UUID
+credentials-file: C:\Users\YOUR_USER\.cloudflared\YOUR_TUNNEL_UUID.json
+
+ingress:
+  - hostname: pasta.example.com
+    service: http://127.0.0.1:4317
+  # catch-all is required as the last rule
+  - service: http_status:404

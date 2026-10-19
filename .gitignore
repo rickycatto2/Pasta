@@ -1,0 +1,14 @@
+# Pasta secrets, local data, logs and build output
+pasta.env
+cloudflared.yml
+data/
+logs/
+Pasta.apk
+public/downloads/*.apk
+android/build/
+android/pasta-release.jks
+android/*.keystore
+android/keystore.properties
+android/server-url.txt
+android/res/values/server_local.xml
+.vscode/

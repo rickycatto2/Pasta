@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="paper">#F2EDE4</color>
+    <color name="paper_soft">#F8F3EA</color>
+    <color name="card">#FFFDF8</color>
+    <color name="ink">#1D1A15</color>
+    <color name="ink_soft">#3B352C</color>
+    <color name="muted">#776D5E</color>
+    <color name="muted_light">#9A8E7D</color>
+    <color name="line">#DED4C4</color>
+    <color name="line_strong">#C9BBA6</color>
+    <color name="accent">#D95138</color>
+    <color name="accent_deep">#B93D26</color>
+    <color name="accent_soft">#F8DED5</color>
+    <color name="forest">#1D3A31</color>
+    <color name="sage">#6F8B79</color>
+    <color name="gold">#EDB55F</color>
+    <color name="danger">#B83A2B</color>
+    <color name="green_soft">#E8F0E7</color>
+    <color name="green_ink">#477052</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="ic_launcher_background">#E4573D</color>
+</resources>

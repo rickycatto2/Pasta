@@ -1,0 +1,15 @@
+{
+  "name": "pasta",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A private, passphrase-protected clipboard shared across all your devices.",
+  "type": "module",
+  "scripts": {
+    "start": "node server/server.mjs",
+    "dev": "node --watch server/server.mjs",
+    "check": "node --check server/server.mjs && node --check public/app.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
