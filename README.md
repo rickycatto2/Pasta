@@ -110,25 +110,18 @@ under systemd, launchd, Docker, or another process supervisor. Make sure both pr
 
 ## Android app
 
-The native client lives in `android/` and is built with the SDK tools directly:
+The native client lives in `android/` and is built with the SDK tools directly. From the repository root:
 
 ```powershell
-cd android
-powershell -ExecutionPolicy Bypass -File .\build.ps1 -Clean
-```
-
-The default server URL in the repository is the placeholder `https://pasta.example.com`. To prefill your own URL without committing it:
-
-```powershell
-# android/server-url.txt is ignored by git
 'https://pasta.example.com' | Set-Content android\server-url.txt
+powershell -ExecutionPolicy Bypass -File android\build.ps1 -Clean
 ```
 
-The build script reads that file and generates an ignored resource override before compiling. Without it, the app starts with the placeholder, and the server URL remains editable on the login screen.
+`server-url.txt` is ignored by git. It prefills the server field in the app; without it, the app starts with the generic placeholder `https://pasta.example.com`, and the URL remains editable on the login screen. The build script generates an ignored resource override before compiling.
 
 ### Signing
 
-For repeatable updates, use your own keystore:
+For repeatable updates, use your own keystore (again from the repository root):
 
 ```powershell
 keytool -genkeypair -keystore android\pasta-release.jks -alias pasta `
